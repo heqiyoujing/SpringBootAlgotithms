@@ -1,0 +1,20 @@
+package spring.boot.com.pattern.Observer观察者;
+
+/**
+ * @author: yiqq
+ * @date: 2019/1/11
+ * @description:
+ */
+public class LaoWang implements Person {
+
+    private String name = "老王";
+
+    public LaoWang() {
+    }
+
+    @Override
+    public void getMessage(String s) {
+        System.out.println(name + "接到了小美打过来的电话，电话内容是：->" + s);
+    }
+
+}
