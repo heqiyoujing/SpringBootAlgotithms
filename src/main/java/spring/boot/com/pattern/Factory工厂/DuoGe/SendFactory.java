@@ -1,8 +1,8 @@
 package spring.boot.com.pattern.Factory工厂.DuoGe;
 
-import design.pattern.Factory工厂.PuTongFactory.MailSender;
-import design.pattern.Factory工厂.PuTongFactory.Sender;
-import design.pattern.Factory工厂.PuTongFactory.SmsSender;
+import spring.boot.com.pattern.Factory工厂.PuTongFactory.MailSender;
+import spring.boot.com.pattern.Factory工厂.PuTongFactory.Sender;
+import spring.boot.com.pattern.Factory工厂.PuTongFactory.SmsSender;
 
 /**
  * @author: yiqq

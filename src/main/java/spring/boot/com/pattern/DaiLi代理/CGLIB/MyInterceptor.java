@@ -20,6 +20,8 @@ public class MyInterceptor implements MethodInterceptor {
 
     // 给目标对象创建一个代理对象
     public Object getProxyInstance() {
+        /*CGlib采用非常底层的字节码技术，可以为一个类创建子类，
+        并在子类中采用方法拦截技术拦截父类方法的调用，并顺势进行增强，即是织入横切逻辑*/
         Enhancer en = new Enhancer();
         en.setSuperclass(target.getClass());
         en.setCallback(this);

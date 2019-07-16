@@ -26,5 +26,6 @@ public class ProxyPatternTest {
         IService proxyService = (IService) Proxy.newProxyInstance(clazz.getClassLoader(),
                 clazz.getInterfaces(), new ServiceInvocationHandler(service));
         proxyService.service();
+        //其实是JDK动态生成了一个类去实现接口,隐藏了这个过程
     }
 }

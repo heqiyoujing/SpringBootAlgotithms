@@ -1,6 +1,7 @@
 package spring.boot.com.pattern.Factory工厂.JingTai;
 
-import design.pattern.Factory工厂.PuTongFactory.Sender;
+
+import spring.boot.com.pattern.Factory工厂.PuTongFactory.Sender;
 
 /**
  * @author: yiqq

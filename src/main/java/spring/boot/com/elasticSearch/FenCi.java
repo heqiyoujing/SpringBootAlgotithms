@@ -1,7 +1,5 @@
 package spring.boot.com.elasticSearch;
 
-import data.algorithms.elasticSearch.model.RequestBody;
-import data.algorithms.elasticSearch.model.UserModel;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.entity.ContentType;
@@ -10,6 +8,7 @@ import org.apache.http.util.EntityUtils;
 import org.elasticsearch.client.Response;
 import org.elasticsearch.client.RestClient;
 import org.junit.Test;
+import spring.boot.com.elasticSearch.model.UserModel;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -44,10 +43,7 @@ public class FenCi {
         HttpEntity entity = new NStringEntity(json, ContentType.APPLICATION_JSON);
         Response response = client.performRequest("GET", "/_analyze", params, entity);
         String responseBody = EntityUtils.toString(response.getEntity());
-        RequestBody body = Tool.json2Object(responseBody, RequestBody.class);
-        List<UserModel> list = body.getTokens();
         StringBuilder builder = new StringBuilder();
-        list.forEach(userModel -> builder.append(userModel.getToken() + ","));
         System.out.println(builder.toString().substring(0,builder.toString().length()-1));
     }
 
