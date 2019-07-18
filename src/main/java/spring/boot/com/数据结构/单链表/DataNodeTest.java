@@ -1,4 +1,4 @@
-package spring.boot.com.shujujiegou.单链表;
+package spring.boot.com.数据结构.单链表;
 
 /**
  * @author: yiqq
@@ -8,10 +8,15 @@ package spring.boot.com.shujujiegou.单链表;
 public class DataNodeTest {
     public static void main(String[] args) {
         DataChain chain = new DataChain(10);
-        DataNode node = reverse(chain.getHead());
+        DataNode node = reverse1(chain.getHead());
         DataChain.printChain(node);
     }
 
+    /**
+     * 通过遍历实现
+     * @param node
+     * @return
+     */
     public static DataNode reverse(DataNode node){
         //如何链表没有元素或者链表只有一个元素，不必要反转，返回链表本身就行。
         if(node == null ||node.next == null){
@@ -31,5 +36,19 @@ public class DataNodeTest {
 
         //因为反转后pre是第一个节点，所以返回pre.
         return pre;
+    }
+
+    /**
+     * 通过递归实现
+     * @param head
+     * @return
+     */
+    public static DataNode reverse1(DataNode head) {
+        if (null == head || null == head.getNext())
+            return head;
+        DataNode revHead = reverse1(head.getNext());
+        head.getNext().setNext(head);
+        head.setNext(null);
+        return revHead;
     }
 }

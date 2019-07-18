@@ -1,4 +1,4 @@
-package spring.boot.com.shujujiegou.二叉树;
+package spring.boot.com.数据结构.二叉树;
 
 /**
  * @author: yiqq

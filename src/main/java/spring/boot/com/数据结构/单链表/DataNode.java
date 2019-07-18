@@ -1,4 +1,4 @@
-package spring.boot.com.shujujiegou.单链表;
+package spring.boot.com.数据结构.单链表;
 
 /**
  * @author: yiqq
