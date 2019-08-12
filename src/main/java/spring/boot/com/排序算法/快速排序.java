@@ -1,5 +1,8 @@
 package spring.boot.com.排序算法;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @author: yiqq
  * @date: 2019/6/4
@@ -8,7 +11,8 @@ package spring.boot.com.排序算法;
 public class 快速排序 {
     /**性质：1、时间复杂度：O(nlogn) 2、空间复杂度：O(logn) 3、非稳定排序 4、原地排序*/
     public static void main(String[] args) {
-        int[] num = {64,55,3,266,232,66,44};
+//        int[] num = {64,55,3,266,232,66,44};
+        int[] num = {5, 2, 9, 3, 8, 4, 4, 7};
         quickSort(num,0,num.length-1);
         for (int i = 0; i < num.length; i++) {
             System.out.println(num[i]);

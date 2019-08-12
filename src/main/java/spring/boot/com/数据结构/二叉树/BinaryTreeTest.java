@@ -1,9 +1,12 @@
 package spring.boot.com.数据结构.二叉树;
 
+import java.util.Stack;
+
 /**
  * @author: yiqq
  * @date: 2019/7/16
  * @description:
+ * https://www.jianshu.com/p/8efe8f281f22（Java 实现的二叉树的递归、非递归遍历）
  */
 public class BinaryTreeTest {
     public static void main(String[] args) {
@@ -14,10 +17,12 @@ public class BinaryTreeTest {
         }
         System.out.println("----------前序遍历");
         preOrder(root);
-        System.out.println("----------中序遍历");
-        inOrder(root);
-        System.out.println("----------后序遍历");
-        postOrder(root);
+//        System.out.println("----------中序遍历");
+//        inOrder(root);
+//        System.out.println("----------后序遍历");
+//        postOrder(root);
+        System.out.println("----------前序遍历非递归");
+        preOrderFei(root);
     }
 
     //前序遍历
@@ -45,6 +50,25 @@ public class BinaryTreeTest {
             postOrder(root.left);
             postOrder(root.right);
             System.out.println("data： " + root.data);
+        }
+    }
+
+    //非递归前序遍历
+    public static void preOrderFei(BinaryTree head) {
+        if (head == null) {
+            return;
+        }
+        Stack<BinaryTree> s = new Stack<BinaryTree>();
+        s.push(head);
+        while (!s.isEmpty()) {
+            BinaryTree cur = s.pop();
+            System.out.println(cur.data);
+            if (cur.right != null) {
+                s.push(cur.right);
+            }
+            if (cur.left != null) {
+                s.push(cur.left);
+            }
         }
     }
 }
