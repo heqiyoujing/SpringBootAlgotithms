@@ -21,12 +21,9 @@ public class Sort {
         if (head == null || head.next == null) {
             return head;
         }
-
         DataNode pre = head;
-        //待排序节点
-        DataNode cur = head.next;
-        //辅助节点，永远指向头结点
-        DataNode aux = new DataNode(0);
+        DataNode cur = head.next;//待排序节点
+        DataNode aux = new DataNode(0);//辅助节点，永远指向头结点
         aux.next=head;
         while (cur != null) {
             if (cur.data < pre.data) {
@@ -50,7 +47,6 @@ public class Sort {
                 cur=cur.next;
             }
         }
-
         return aux.next;
     }
 
