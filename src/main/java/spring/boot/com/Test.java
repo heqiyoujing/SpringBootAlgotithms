@@ -3,6 +3,7 @@ package spring.boot.com;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 /**
  * @author: yiqq
@@ -11,7 +12,20 @@ import java.util.List;
  */
 public class Test {
     public static void main(String[] args) {
-        List<Long> list = new ArrayList<Long>(Arrays.asList(90L));
-        list.forEach(System.out::println);
+        Integer nane = 29;
+        Integer nane1 = 29;
+        System.out.println(nane==nane1);
+        Integer me = new Integer(1);
+        Integer me1 = new Integer(1);
+        System.out.println(me==me1);
+        nane = 22;
+        System.out.println(nane);
+        System.out.println(nane1);
+
+
+        Executors.newCachedThreadPool();
+        Executors.newFixedThreadPool(5);
+        Executors.newSingleThreadExecutor();
+        Executors.newScheduledThreadPool(100);
     }
 }
